@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaSecurityStudy:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaSecurityStudy_jar</output-path>
+    <root id="archive" name="JavaSecurityStudy.jar">
+      <element id="module-output" name="JavaSecurityStudy" />
+    </root>
+  </artifact>
+</component>
